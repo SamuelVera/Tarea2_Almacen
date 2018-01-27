@@ -1,33 +1,26 @@
 package tarea2_samuelvera;
 
-import java.util.Random;
 
 public class NoPerecedero extends Alimento{
     
-    Random rand = new Random();
-    
-    public NoPerecedero(int cantidad, String proveedor) {
-        super(cantidad, proveedor);
-        setNombre(); //Elección del nombre
-    }
-    public int getFVence(){
-        return 0;
+    public NoPerecedero(String nombre) {
+        super(nombre);
+        setProveedorPrecioCosto();
     }
     @Override
-    public void setNombre(){ //Nombre y su precio acorde
-        this.aux = rand.nextInt(4);
-        if(aux == 0){
-            this.nombre = "Latas de Atun";
-            this.precio = 100;
-        }else if(aux == 1){
-            this.nombre = "Latas de Maiz";
-            this.precio = 50;
-        }else if(aux == 2){
-            this.nombre = "Salsa de Tomate";
+    public void setProveedorPrecioCosto(){ //Nombre y su precio acorde
+        if(this.nombre == "Enlatado de carne"){
+            this.proveedor = "Kreft";
+            this.costo = 8;
             this.precio = 30;
-        }else{
-            this.nombre = "Enlatado de Vegetales Genero";
-            this.precio = 30;
+        }else if(this.nombre == "Enlatado de pollo"){
+            this.proveedor = "Hainz";
+            this.costo = 10;
+            this.precio = 40;
+        }else if(this.nombre == "Vegetales en lata"){
+            this.proveedor = "Abastos Co";
+            this.costo = 20;
+            this.precio = 60;
         }
     }
     @Override
@@ -39,11 +32,11 @@ public class NoPerecedero extends Alimento{
         return this.proveedor;
     }
     @Override
-    public int getCantidad() {
-        return this.cantidad;
+    public double getPrecio() {
+        return this.precio;
     }
     @Override
-    public float getPrecio() {
-        return this.precio;
+    public double getCosto(){
+        return this.costo;
     }
 }

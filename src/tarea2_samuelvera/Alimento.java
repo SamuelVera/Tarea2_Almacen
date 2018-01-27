@@ -1,20 +1,16 @@
 package tarea2_samuelvera;
 
+
 public abstract class Alimento {
     protected String nombre, proveedor;
-    protected int cantidad, aux, FVence;
-    protected float precio;
-    
+    protected double precio, costo;
         //Constructor
-    Alimento(int cantidad, String proveedor){
-        this.cantidad = cantidad;
-        this.proveedor = proveedor;
+    Alimento(String nombre){
+        this.nombre = nombre;
     }
-    
     public abstract String getNombre();
     public abstract String getProveedor();
-    public abstract int getCantidad();
-    public abstract float getPrecio();
-    public abstract void setNombre();
-    public abstract int getFVence();
+    public abstract double getPrecio();
+    public abstract double getCosto();
+    public abstract void setProveedorPrecioCosto();
 }
